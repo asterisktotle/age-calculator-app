@@ -4,26 +4,34 @@
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<link rel="stylesheet" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;1,700;1,800;1,900&display=swap" rel="stylesheet">
 		<title>Frontend Mentor | Age calculator app</title>
 	</head>
 	<body>
 		
 		<div class="card">
 			<div class="user-input">
-				<form>
-				<label class="date" for="day">Day</label>
-				<input type="text" inputmode="numeric" id="day">
-				<label class="date" for="month">Month</label>
-				<input type="text" inputmode="numeric" id="month">
-				<label class="date" for="year">Year</label>
-				<input type="text" inputmode="numeric" id="year">
-				<input type="submit" value="submit">
-				</form>
-			</div>
+				<form class="form-input">
+				
+						<label class="date" for="day">Day</label>
+						<input type="text" inputmode="numeric" id="day">
+				
+
+						<label class="date" for="month">Month</label>
+						<input type="text" inputmode="numeric" id="month">
+					
+						<label class="date" for="year">Year</label>
+						<input type="text" inputmode="numeric" id="year">
+					
+			    </form>
+		    </div>
+		<button>Submit</button>
 			<div class="display-date">
-				<div class="result-years">-- years</div>
-				<div class="result-months">-- months</div>
-				<div class="result-days">-- days</div>
+				<div class="result-years"><span>--</span>years</div>
+				<div class="result-months"><span>--</span>months</div>
+				<div class="result-days"><span>--</span>days</div>
 			</div>	
 		</div>
 		</div>

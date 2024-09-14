@@ -3,6 +3,7 @@ import dayjs from 'https://unpkg.com/dayjs@1.11.10/esm/index.js';
 const today = dayjs();
 const submitBtn = document.querySelector('.js-button');
 const userInput = document.querySelectorAll('.userInput');
+const renderDate = document.querySelector('.display-date');
 
 // FUNCTIONS
 submitBtn.addEventListener('click', () => {
@@ -29,7 +30,14 @@ submitBtn.addEventListener('click', () => {
 		.subtract(month, 'month')
 		.diff(userDate, 'day');
 
-	console.log(year);
-	console.log(month);
-	console.log(day);
+	renderDate.innerHTML = `<div class="display-years">
+					<span class="digit-years">${year}</span> years
+				</div>
+				<div class="display-months">
+					<span class="digit-months">${month}</span> months
+				</div>
+				<div class="display-days"><span class="digit-days">${day}</span> days</div>`;
 });
+
+//required input warning
+function renderRequired() {}

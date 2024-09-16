@@ -47,6 +47,7 @@ body {
 	gap: 0.3rem;
 	padding-right: 10rem;
 }
+
 #day,
 #month,
 #year {
@@ -81,6 +82,16 @@ button {
 	border-radius: 50%;
 	position: absolute;
 	right: 0px;
+	cursor: pointer;
+}
+
+button:hover {
+	background-color: black;
+}
+
+small {
+	color: red;
+	display: none;
 }
 
 /* display digits */

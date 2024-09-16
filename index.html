@@ -18,7 +18,7 @@
 			<div class="user-input">
 				<form>
 					<div class="grid-form-box">
-						<label for="day-input">DAY</label>
+						<label for="day-input" class="date-label">DAY</label>
 						<input
 							type="text"
 							id="day-input"
@@ -26,8 +26,8 @@
 							inputmode="numeric"
 							placeholder="DD"
 						/>
-						<small class="required-date">This field is required</small>
-						<label for="month-input">MONTH</label>
+						<small id="day" class="error-display">This field is required</small>
+						<label for="month-input" class="date-label">MONTH</label>
 						<input
 							type="text"
 							id="month-input"
@@ -35,8 +35,10 @@
 							inputmode="numeric"
 							placeholder="MM"
 						/>
-						<small class="required-date">This field is required</small>
-						<label for="year-input">YEAR</label>
+						<small id="month" class="error-display"
+							>This field is required</small
+						>
+						<label for="year-input" class="date-label">YEAR</label>
 						<input
 							type="text"
 							id="year-input"
@@ -44,7 +46,9 @@
 							inputmode="numeric"
 							placeholder="YYY"
 						/>
-						<small class="required-date">This field is required</small>
+						<small id="year" class="error-display"
+							>This field is required</small
+						>
 					</div>
 				</form>
 			</div>

@@ -4,14 +4,41 @@ const today = dayjs();
 const submitBtn = document.querySelector('.js-button');
 const userInput = document.querySelectorAll('.userInput');
 const renderDate = document.querySelector('.display-date');
+const errorMessage = document.querySelectorAll('.error-display');
+const labelDate = document.querySelectorAll('.date-label');
 
 // FUNCTIONS
 submitBtn.addEventListener('click', () => {
-	console.log('Button clicked');
+	console.log('btn clicked');
 	let dateDigit = [];
 
-	userInput.forEach((digit) => {
-		dateDigit.push(digit.value);
+	userInput.forEach((digit, index) => {
+		const displayError = errorMessage[index];
+		const dateLabel = labelDate[index];
+
+		if (digit.id === 'day-input' && (digit.value < 1 || digit.value > 31)) {
+			displayError.style.display = 'block';
+			dateLabel.style.color = 'red';
+			digit.style.color = 'red';
+		} else if (
+			digit.id === 'month-input' &&
+			(digit.value < 1 || digit.value > 12)
+		) {
+			displayError.style.display = 'block';
+			dateLabel.style.color = 'red';
+			digit.style.color = 'red';
+		} else if (
+			digit.id === 'year-input' &&
+			(digit.value < 1900 || digit.value > today.$y)
+		) {
+			displayError.style.display = 'block';
+			dateLabel.style.color = 'red';
+			digit.style.color = 'red';
+		} else {
+			dateDigit.push(digit.value);
+			displayError.style.display = 'none';
+			dateLabel.style.color = 'black';
+		}
 	});
 
 	const userYear = Number(dateDigit[2]);
@@ -40,4 +67,3 @@ submitBtn.addEventListener('click', () => {
 });
 
 //required input warning
-function renderRequired() {}

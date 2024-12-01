@@ -9,35 +9,52 @@ const labelDate = document.querySelectorAll('.date-label');
 
 // FUNCTIONS
 submitBtn.addEventListener('click', () => {
-	console.log('btn clicked');
 	let dateDigit = [];
 
 	userInput.forEach((digit, index) => {
 		const displayError = errorMessage[index];
 		const dateLabel = labelDate[index];
 
+		// Check for empty input first
+		if (!digit.value) {
+			displayError.style.display = 'block';
+			displayError.innerText = 'This field is required';
+			dateLabel.style.color = 'red';
+			digit.style.borderColor = 'red';
+			hasError = true;
+			return;
+		}
+
+		// Check for valid day input
 		if (digit.id === 'day-input' && (digit.value < 1 || digit.value > 31)) {
 			displayError.style.display = 'block';
+			displayError.innerText = 'Must be a valid day';
 			dateLabel.style.color = 'red';
-			digit.style.color = 'red';
+			digit.style.borderColor = 'red';
+			hasError = true;
 		} else if (
 			digit.id === 'month-input' &&
 			(digit.value < 1 || digit.value > 12)
 		) {
 			displayError.style.display = 'block';
+			displayError.innerText = 'Must be a valid month';
 			dateLabel.style.color = 'red';
-			digit.style.color = 'red';
+			digit.style.borderColor = 'red';
+			hasError = true;
 		} else if (
 			digit.id === 'year-input' &&
 			(digit.value < 1900 || digit.value > today.$y)
 		) {
 			displayError.style.display = 'block';
+			displayError.innerText = 'Must be in the past';
 			dateLabel.style.color = 'red';
-			digit.style.color = 'red';
+			digit.style.borderColor = 'red';
+			hasError = true;
 		} else {
 			dateDigit.push(digit.value);
 			displayError.style.display = 'none';
 			dateLabel.style.color = 'black';
+			digit.style.borderColor = 'var(--clr-neutral-lightGrey)';
 		}
 	});
 

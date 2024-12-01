@@ -91,7 +91,6 @@ button:hover {
 
 small {
 	color: red;
-	display: none;
 }
 
 /* display digits */
@@ -101,4 +100,9 @@ small {
 }
 .display-date span {
 	color: var(--clr-primary-purple);
+}
+
+.error-display {
+	display: none; /* Hide error messages by default */
+	color: red;
 }

@@ -4,7 +4,7 @@
 	--fw-medium: 700;
 	--fw-bold: 800;
 	--fs-verySmall: 0.6rem;
-	--fs-small: 0.8rem;
+	--fs-small: 1rem;
 	--fs-medium: 1.5rem;
 	--fs-large: 5rem;
 
@@ -14,7 +14,7 @@
 	--clr-neutral-white: hsl(0, 0%, 100%);
 	--clr-neutral-offWhite: hsl(0, 0%, 94%);
 	--clr-neutral-lightGrey: hsl(0, 0%, 86%);
-	--clr-neutral-smokeyGrey: hsl(0, 1%, 44%);
+	--clr-neutral-smokeyGrey: hsl(0, 0%, 46%);
 	--clr-neutral-offBlack: hsl(0, 0%, 8%);
 }
 *,
@@ -59,11 +59,20 @@ body {
 	font-size: var(--fs-medium);
 	padding: 0.4em;
 	border: 1px solid var(--clr-neutral-lightGrey);
+	border-radius: 0.5rem;
+}
+
+.date-label {
+	font-size: var(--fs-small);
+	letter-spacing: 0.1rem;
+	font-weight: var(--fw-medium);
+	color: var(--clr-neutral-smokeyGrey);
 }
 
 .error-display {
 	display: none;
 	font-size: var(--fs-verySmall);
+
 	color: var(--clr-primary-red);
 }
 
@@ -105,4 +114,131 @@ small {
 }
 .display-date span {
 	color: var(--clr-primary-purple);
+}
+
+/* Add these media queries at the end of your CSS file */
+
+@media screen and (max-width: 375px) {
+	.card {
+		max-width: 95dvw;
+		padding: 2rem 1rem;
+		border-radius: 1rem 1rem 5rem 1rem;
+	}
+
+	.grid-form-box {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.5rem;
+		padding-right: 0;
+	}
+
+	.input-group {
+		width: 100%;
+	}
+
+	.input-group input {
+		max-width: 100%;
+		width: 100%;
+		border-radius: 0.5rem;
+		padding: 0.3em;
+		font-size: var(--fs-small);
+		font-weight: var(--fw-medium);
+	}
+
+	.date-label {
+		font-size: var(--fs-small);
+	}
+
+	.submit-button {
+		min-width: auto;
+		width: 90%;
+		padding-block: 3rem;
+	}
+
+	button {
+		padding: 0.8rem;
+		right: 50%;
+		transform: translateX(50%);
+	}
+
+	.display-date {
+		font-size: 2.5rem;
+	}
+
+	.display-years,
+	.display-months,
+	.display-days {
+		line-height: 1.2;
+	}
+}
+
+@media screen and (max-width: 480px) {
+	.card {
+		max-width: 95dvw;
+		padding: 2rem 1rem;
+		border-radius: 1rem 1rem 5rem 1rem;
+	}
+
+	.grid-form-box {
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0rem;
+		padding-right: 0;
+	}
+
+	.input-group {
+		width: 100%;
+	}
+
+	.input-group input {
+		max-width: 100%;
+		width: 90%;
+		border-radius: 0.5rem;
+		font-size: var(--fs-medium);
+		font-weight: var(--fw-medium);
+		padding: 0.5em;
+	}
+
+	.date-label {
+		font-size: var(--fs-small);
+	}
+
+	.submit-button {
+		max-width: 30%;
+		width: 30%;
+		padding-block: 4rem;
+	}
+
+	button {
+		padding: 0.8rem;
+		right: 50%;
+		transform: translateX(50%);
+	}
+
+	.line {
+		min-width: 100%;
+	}
+
+	.display-date {
+		font-size: 2.5rem;
+	}
+
+	.display-years,
+	.display-months,
+	.display-days {
+		line-height: 1.2;
+	}
+}
+
+/* Additional media query for tablets and medium-sized screens */
+@media screen and (max-width: 768px) {
+	.card {
+		max-width: 80dvw;
+	}
+
+	.grid-form-box {
+		padding-right: 0;
+	}
+
+	.submit-button {
+		min-width: 100%;
+	}
 }

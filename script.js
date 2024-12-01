@@ -53,7 +53,7 @@ submitBtn.addEventListener('click', () => {
 		} else {
 			dateDigit.push(digit.value);
 			displayError.style.display = 'none';
-			dateLabel.style.color = 'black';
+			dateLabel.style.color = 'var(--clr-neutral-smokeyGrey)';
 			digit.style.borderColor = 'var(--clr-neutral-lightGrey)';
 		}
 	});

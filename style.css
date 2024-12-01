@@ -140,8 +140,8 @@ small {
 		width: 100%;
 		border-radius: 0.5rem;
 		padding: 0.3em;
-		font-size: var(--fs-small);
-		font-weight: var(--fw-medium);
+		font-size: var(--fs-medium);
+		font-weight: var(--fw-bold);
 	}
 
 	.date-label {

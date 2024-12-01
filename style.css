@@ -43,23 +43,28 @@ body {
 
 .grid-form-box {
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
-	gap: 0.3rem;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 2rem;
 	padding-right: 10rem;
 }
 
-#day,
-#month,
-#year {
-	grid-row-start: 3;
-	font-size: var(--fs-verySmall);
+.input-group {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
 }
-.grid-form-box input {
-	grid-row-start: 2;
+
+.input-group input {
 	max-width: 5rem;
 	font-size: var(--fs-medium);
 	padding: 0.4em;
-	border-color: var(--clr-neutral-lightGrey);
+	border: 1px solid var(--clr-neutral-lightGrey);
+}
+
+.error-display {
+	display: none;
+	font-size: var(--fs-verySmall);
+	color: var(--clr-primary-red);
 }
 
 .submit-button {
@@ -100,9 +105,4 @@ small {
 }
 .display-date span {
 	color: var(--clr-primary-purple);
-}
-
-.error-display {
-	display: none; /* Hide error messages by default */
-	color: red;
 }
